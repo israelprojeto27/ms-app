@@ -3,6 +3,7 @@ package com.produtos.app.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ import com.produtos.app.dto.UpdateProdutoDto;
 import com.produtos.app.service.ProdutoService;
 import com.produtos.app.utils.Message;
 
+
+
 @RestController
 @RequestMapping("/produto")
 public class ProdutoController {
@@ -31,6 +34,9 @@ public class ProdutoController {
 	 * criar um Endpoint que permite a Paginacao e Ordenacao dos registros
 	 * 
 	 */
+	
+	@Value("${test.config}")
+	private String testConfig;
 	
 	@PostMapping("/create")
 	public ResponseEntity<?> createProduto(@Valid @RequestBody CreateProdutoDto dto) {
@@ -47,6 +53,7 @@ public class ProdutoController {
 	
 	@GetMapping("/listAll")
 	public ResponseEntity<?> listAllProdutos() {
+		System.out.println("Test config value: " + testConfig);
 		return new ResponseEntity<>(service.findAllProdutos(), HttpStatus.OK);
 	}
 	
