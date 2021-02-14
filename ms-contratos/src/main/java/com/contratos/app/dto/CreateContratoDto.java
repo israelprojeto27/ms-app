@@ -13,6 +13,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CreateContratoDto {
 
+	private String idCliente;
+	private String idProduto;
+	private long quantidadeItens;
 	private String observacao;
-	private BigDecimal valorTotal;
+	
 }

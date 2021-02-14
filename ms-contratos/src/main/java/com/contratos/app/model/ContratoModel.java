@@ -25,6 +25,14 @@ public class ContratoModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private Long idCliente;
+	private String nomeCliente;
+	
+	private Long idProduto;
+	private String nomeProduto;
+	
+	private long quantidadeItens;
+	
 	private String observacao;
 	private BigDecimal valorTotal;
 	private LocalDate dataCriacao;

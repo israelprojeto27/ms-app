@@ -42,9 +42,8 @@ public class ProdutoService {
 		return repository.findById(Long.parseLong(idProduto)).orElseThrow(() -> new DataNotFoundException(Message.MSG_ERRO_PRODUTO_NAO_ENCONTRADO));		
 	}
 
-	public ProdutoModel findProdutoByNomeProduto(String nomeProduto) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ProdutoModel> findProdutoByNomeProduto(String nomeProduto) {
+		return repository.findByNomeContaining(nomeProduto);
 	}
 
 

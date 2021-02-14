@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.clientes.app.dto.CreateClienteDto;
 import com.clientes.app.dto.Response;
 import com.clientes.app.dto.UpdateClienteDto;
+import com.clientes.app.model.ClienteModel;
 import com.clientes.app.service.ClienteService;
 import com.clientes.app.utils.Message;
 
@@ -56,15 +57,13 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/findClienteById/{idCliente}")
-	public ResponseEntity<?> getFindClienteById(@PathVariable String idCliente) {
-		
-		return new ResponseEntity<>(service.findProdutoByIdCliente(idCliente),  HttpStatus.OK);	
+	public ResponseEntity<ClienteModel> getFindClienteById(@PathVariable String idCliente) {		
+		return new ResponseEntity<ClienteModel>(service.findProdutoByIdCliente(idCliente),  HttpStatus.OK);	
 	}
 	
 	@GetMapping("/findClienteByNome/{nomeCliente}")
-	public ResponseEntity<?> getFindClienteByNome(@PathVariable String nomeCliente) {
-		
-		return null;
+	public ResponseEntity<?> getFindClienteByNome(@PathVariable String nomeCliente) {		
+		return new ResponseEntity<>(service.findProdutoByNomeCliente(nomeCliente),  HttpStatus.OK);	
 	}
 	
 	@PatchMapping("/updateStatusCliente")

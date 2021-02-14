@@ -44,4 +44,9 @@ public class ClienteService {
 		return repository.findById(Long.parseLong(idCliente)).orElseThrow(() -> new DataNotFoundException(Message.MSG_ERRO_CLIENTE_NAO_ENCONTRADO));
 	}
 
+
+	public List<ClienteModel> findProdutoByNomeCliente(String nomeCliente) {
+		return repository.findByNomeContaining(nomeCliente);
+	}
+
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.produtos.app.dto.CreateProdutoDto;
 import com.produtos.app.dto.Response;
 import com.produtos.app.dto.UpdateProdutoDto;
+import com.produtos.app.model.ProdutoModel;
 import com.produtos.app.service.ProdutoService;
 import com.produtos.app.utils.Message;
 
@@ -58,8 +59,8 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("/findProdutoById/{idProduto}")
-	public ResponseEntity<?> getFindProdutoById(@PathVariable String idProduto) {
-		return new ResponseEntity<>(service.findProdutoByIdProduto(idProduto),  HttpStatus.OK);	
+	public ResponseEntity<ProdutoModel> getFindProdutoById(@PathVariable String idProduto) {
+		return new ResponseEntity<ProdutoModel>(service.findProdutoByIdProduto(idProduto),  HttpStatus.OK);	
 	}
 	
 	@GetMapping("/findProdutoByNome/{nomeProduto}")
