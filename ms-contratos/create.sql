@@ -1,0 +1,2 @@
+create table contrato (id  bigserial not null, data_criacao date, id_cliente int8, id_produto int8, nome_cliente varchar(255), nome_produto varchar(255), observacao varchar(255), quantidade_itens int8 not null, valor_total numeric(19, 2), primary key (id));
+create table contrato (id  bigserial not null, data_criacao date, id_cliente int8, id_produto int8, nome_cliente varchar(255), nome_produto varchar(255), observacao varchar(255), quantidade_itens int8 not null, valor_total numeric(19, 2), primary key (id));

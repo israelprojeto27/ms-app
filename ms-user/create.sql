@@ -1,0 +1,10 @@
+create table role (id  bigserial not null, role_name varchar(255), primary key (id));
+create table tb_user_role (user_id int8 not null, role_id int8 not null, primary key (user_id, role_id));
+create table usuario (id  bigserial not null, email varchar(255), nome varchar(255), password varchar(255), primary key (id));
+alter table tb_user_role add constraint FKwei10c42xhnvb2150cg5ojwi foreign key (role_id) references role;
+alter table tb_user_role add constraint FKdvyx6gdxxiqqv2v0iwrm7qkot foreign key (user_id) references usuario;
+create table role (id  bigserial not null, role_name varchar(255), primary key (id));
+create table tb_user_role (user_id int8 not null, role_id int8 not null, primary key (user_id, role_id));
+create table usuario (id  bigserial not null, email varchar(255), nome varchar(255), password varchar(255), primary key (id));
+alter table tb_user_role add constraint FKwei10c42xhnvb2150cg5ojwi foreign key (role_id) references role;
+alter table tb_user_role add constraint FKdvyx6gdxxiqqv2v0iwrm7qkot foreign key (user_id) references usuario;
